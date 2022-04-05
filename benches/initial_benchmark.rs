@@ -45,15 +45,6 @@ pub fn bench_05(c: &mut Criterion) {
     });
 }
 
-pub fn bench_06(c: &mut Criterion) {
-    let data = &[0xa; 6];
-    let total_bits = sorensen::total_bits(black_box(data));
-    let sha256_hash = "d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6";
-    c.bench_function("06 bytes", |b| {
-        b.iter(|| sorensen::decompress(data.len(), total_bits, sha256_hash))
-    });
-}
-
 criterion_group! {
     name = short;
     config = Criterion::default().sample_size(100);
@@ -62,6 +53,6 @@ criterion_group! {
 criterion_group! {
     name = long;
     config = Criterion::default().sample_size(10);
-    targets = bench_04, bench_05, bench_06
+    targets = bench_04, bench_05
 }
 criterion_main!(short, long);

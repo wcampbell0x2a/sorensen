@@ -23,6 +23,7 @@ RUSTFLAGS="-C target-cpu=native" cargo bench
 02 bytes                time:   [274.52 us 275.55 us 276.68 us]
 03 bytes                time:   [20.334 ms 20.414 ms 20.500 ms]
 04 bytes                time:   [1.6147 s  1.6206 s  1.6267 s]
+05 bytes                time:   [127.16 s  131.32 s  135.23 s]
 ```
 
 ## Previous.... _art_
